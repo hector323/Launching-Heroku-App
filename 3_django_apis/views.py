@@ -60,11 +60,10 @@ def search_results(request):
         context['search_message'] = 'Headlines'
         context['results_count'] = 0
         # API URL Example:
-        # http://content.guardianapis.com/search?q=coding&
-        # api k goes here
+        # http://content.guardianapis.com/search?q=coding&api-key=a938fccc-00e9-41ca-905c-741615da8be1
         url = 'http://content.guardianapis.com/search?q='
         url += search_query
-        url += # key
+        url += '&api-key=a938fccc-00e9-41ca-905c-741615da8be1'
 
         ########################################
         # Advanced Bonus Challenge: Add pagination
@@ -141,8 +140,7 @@ def giggle_news(request):
     # Do a GET request using the API key to get the latest Guardian headlines
     # The parameters are detailed here:
     # https://open-platform.theguardian.com/documentation/search
-    url ='http://content.guardianapis.com/search?
-    # API k goes here
+    url ='http://content.guardianapis.com/search?api-key=a938fccc-00e9-41ca-905c-741615da8be1&page-size=50'
     response = requests.get(url)
     news_data = response.json() # Interpret response as JSON
 
